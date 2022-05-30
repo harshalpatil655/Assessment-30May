@@ -1,21 +1,36 @@
 import React from "react";
+import { useState } from "react";
 
 const AddProduct = () => {
   // TODO: Remove below const and instead import them from chakra
-  const Button = () => <div />;
-  const Modal = () => <div />;
-  const ModalBody = () => <div />;
-  const Input = () => <div />;
-  const Select = () => <div />;
-  const RadioGroup = () => <div />;
-  const Radio = () => <div />;
+  // const Button = () => <div />;
+  // const Modal = () => <div />;
+  // const ModalBody = () => <div />;
+  // const Input = () => <div />;
+  // const Select = () => <div />;
+  // const RadioGroup = () => <div />;
+  // const Radio = () => <div />;
+  const [product, setProduct] = useState([]);
+
+  const handleChange = (e) => {
+    console.log(e);
+  };
 
   return (
     <>
-      <Button my={4} data-cy="add-product-button"></Button>
+      <Button my={4} data-cy="add-product-button">
+        Add New Product
+      </Button>
       <Modal>
         <ModalBody pb={6}>
-          <Input data-cy="add-product-title" />
+          <Input
+            data-cy="add-product-title"
+            type="text"
+            name="title"
+            value={e.target.value}
+            placeholder="Title"
+            onChange={handleChange}
+          />
           <Select data-cy="add-product-category">
             <option data-cy="add-product-category-shirt"></option>
             <option data-cy="add-product-category-pant"></option>
